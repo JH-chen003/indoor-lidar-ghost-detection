@@ -36,13 +36,11 @@ All SDs < 0.001 — high reproducibility within the fixed target-domain setting.
 | File | Purpose |
 |------|---------|
 | `ghost_detector.py` | Core training pipeline (PointNet2 + Focal Loss + priority sampling) |
-| `evaluate.py` | Basic evaluation on a checkpoint |
-| `evaluate.py` | **Deterministic** evaluation with fixed `--eval_seed` and `torch.use_deterministic_algorithms` |
+| `evaluate.py` | Deterministic evaluation with fixed `--seed` and `torch.use_deterministic_algorithms` |
 | `build_tables.py` | Regenerate all paper tables from `results_master_formal.csv` |
-| `requirements.lock` | Package dependencies |
-| `requirements.lock` | Tested environment lockfile |
-| `REPRODUCE.md` | Step-by-step reproduction guide with expected outputs |
-| `LICENSE` | MIT License |
+| `requirements.lock` | Tested environment lockfile (torch==2.1.0+cu121) |
+| `README.md` | Overview and quick-start guide |
+| `REPRODUCE.md` | Step-by-step reproduction instructions with expected outputs |
 
 ---
 

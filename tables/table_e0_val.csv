@@ -1,0 +1,4 @@
+Strategy,mIoU_Mean,mIoU_SD,note
+Target-only,0.9547,0.0018,val; own domain; NOT for cross-strategy comparison
+Source-only,0.6892,0.0075,val; own domain; NOT for cross-strategy comparison
+Direct-mixed,0.746,0.0933,val; own domain; NOT for cross-strategy comparison

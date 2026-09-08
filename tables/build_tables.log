@@ -1,0 +1,69 @@
+build_tables.py run at 2026-09-08T00:13:39.761155
+Master: results_master_formal.csv | Output: /home/claude/github_tables/
+Loaded 51 rows from results_master_formal.csv
+
+============================================================
+E0: THREE-STRATEGY BASELINE
+  Target-only val mIoU: 0.9547±0.0018
+  Source-only val mIoU: 0.6892±0.0075
+  Direct-mixed val mIoU: 0.746±0.0933
+  Written: /home/claude/github_tables/table_e0_val.csv
+  Target-only test mIoU: 0.9623±0.0008
+  Source-only test mIoU: 0.2584±0.0002
+  Direct-mixed test mIoU: 0.9097±0.0553
+  Written: /home/claude/github_tables/table_e0_test.csv
+  Focal-priority test mIoU: 0.9623±0.0008
+  Focal-priority test precision: 0.9638±0.0005
+  Focal-priority test recall: 0.9978±0.0003
+  Focal-priority test F1: 0.9805±0.0004
+  Focal-priority test IoU_ghost: 0.9617±0.0008
+  Focal-priority test AP: 0.9927±0.0009
+  Written: /home/claude/github_tables/table_e0_test_full.csv
+
+============================================================
+E2: PROPORTION-ORIENTED REBALANCING (n=3)
+  seed2026: precision=0.9316 recall=0.844 F1=0.8856 IoU_ghost=0.7947 AP=0.958345
+  seed2027: precision=0.9107 recall=0.877 F1=0.8935 IoU_ghost=0.8076 AP=0.9561171533537717
+  seed2028: precision=0.6887 recall=0.986 F1=0.811 IoU_ghost=0.6821 AP=0.96139325682547
+  Mean±SD: precision=0.8437±0.1346 recall=0.9023±0.0743 F1=0.8634±0.0455 IoU_ghost=0.7615±0.069 AP=0.9586±0.0026
+  Written: /home/claude/github_tables/table_e2.csv
+
+============================================================
+E3: COMMON-FOV (val, n=3)
+  Target-only mIoU: 0.8881±0.003
+  Direct-mixed mIoU: 0.6879±0.0117
+  Written: /home/claude/github_tables/table_e3.csv
+  Target-only full: precision=0.8405 recall=0.9737 F1=0.9022 IoU_ghost=0.8218 AP=0.9468
+  Direct-mixed full: precision=0.6404 recall=0.6864 F1=0.6621 IoU_ghost=0.4949 AP=0.7361
+  Written: /home/claude/github_tables/table_e3_full.csv
+
+============================================================
+E4: 3x2 ABLATION (val, n=3)
+NOTE: Focal-priority uses e0_target_only_seed* with split=val ONLY.
+  CE-p mIoU: 0.9791±0.0012 (n=3)
+  WCE-p mIoU: 0.9709±0.0004 (n=3)
+  Focal-p* mIoU: 0.9547±0.0018 (n=3)
+  CE-r mIoU: 0.9382±0.0014 (n=3)
+  WCE-r mIoU: 0.9275±0.0022 (n=3)
+  Focal-r mIoU: 0.8981±0.0023 (n=3)
+  Written: /home/claude/github_tables/table_e4_miou.csv
+  CE-p full (mean): precision=0.9817 recall=0.9905 F1=0.9861 IoU_ghost=0.9726 AP=0.9973
+  WCE-p full (mean): precision=0.9652 recall=0.9967 F1=0.9807 IoU_ghost=0.9621 AP=0.995
+  Focal-p* full (mean): precision=0.9463 recall=0.9946 F1=0.9699 IoU_ghost=0.9415 AP=0.9905
+  CE-r full (mean): precision=0.9241 recall=0.9604 F1=0.9419 IoU_ghost=0.8902 AP=0.9907
+  WCE-r full (mean): precision=0.8802 recall=0.9894 F1=0.9316 IoU_ghost=0.872 AP=0.9907
+  Focal-r full (mean): precision=0.8333 recall=0.9827 F1=0.9019 IoU_ghost=0.8213 AP=0.9868
+  Written: /home/claude/github_tables/table_e4_full.csv
+
+============================================================
+E6: INTENSITY CALIBRATION (val, n=3)
+  uncalibrated mIoU: 0.746±0.0933 (n=3)
+  percentile mIoU: 0.7969±0.0065 (n=3)
+  z-score mIoU: 0.7865±0.0207 (n=3)
+  histogram mIoU: 0.7964±0.0022 (n=3)
+  Written: /home/claude/github_tables/table_e6.csv
+  percentile full (mean): precision=0.8534 recall=0.7963 F1=0.8231 IoU_ghost=0.6995 AP=0.9082
+  z-score full (mean): precision=0.7841 recall=0.8681 F1=0.8197 IoU_ghost=0.6947 AP=0.9257
+  histogram full (mean): precision=0.7362 recall=0.965 F1=0.8352 IoU_ghost=0.717 AP=0.9566
+  Written: /home/claude/github_tables/table_e6_full_metrics.csv
+  Note: table_e6_full_metrics.csv is a supplementary detail file; the 9 primary CSVs are as listed in the manual.

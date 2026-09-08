@@ -1,0 +1,3 @@
+Strategy,mIoU_Mean,mIoU_SD
+Target-only,0.8881,0.003
+Direct-mixed,0.6879,0.0117

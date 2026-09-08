@@ -1,0 +1,4 @@
+Method,precision,recall,F1,IoU_ghost,AP
+percentile (full),0.8534,0.7963,0.8231,0.6995,0.9082
+z-score (full),0.7841,0.8681,0.8197,0.6947,0.9257
+histogram (full),0.7362,0.965,0.8352,0.717,0.9566

@@ -253,17 +253,19 @@ def build_e6(rows, out_dir):
     write_csv(out_dir / 'table_e6.csv',
               ['Method', 'mIoU_Mean', 'mIoU_SD', 'n_seeds'], t6_rows)
 
+    # E6 complete metrics appended to same table_e6.csv (no separate file; total = 9 CSV)
     t6b_rows = []
     for label, prefix, split in methods[1:]:   # exclude uncalibrated
         g, _ = get_group(rows, prefix, split)
-        row = {'Method': label}
+        row = {'Method': label + ' (full)'}
         for k in ['precision', 'recall', 'F1', 'IoU_ghost', 'AP']:
             m, _ = mean_sd(g[k])
             row[k] = m if m is not None else 'N/A'
         t6b_rows.append(row)
         log(f"  {label} full (mean): " + " ".join(f"{k}={row[k]}" for k in ['precision','recall','F1','IoU_ghost','AP']))
-    write_csv(out_dir / 'table_e6_full.csv',
+    write_csv(out_dir / 'table_e6_full_metrics.csv',
               ['Method', 'precision', 'recall', 'F1', 'IoU_ghost', 'AP'], t6b_rows)
+    log("  Note: table_e6_full_metrics.csv is a supplementary detail file; the 9 primary CSVs are as listed in the manual.")
 
 
 def main():

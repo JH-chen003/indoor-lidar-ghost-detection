@@ -3,6 +3,8 @@
 > **Anonymous Submission** — Code for the paper:
 > *"Indoor LiDAR Ghost Point Detection with Physics-Inspired Synthetic Data: A Controlled Multi-Factor Diagnosis"*
 >
+> **Anonymous Repository**: https://anonymous.4open.science/r/indoor-lidar-ghost-detection-F44B/
+>
 > Author information will be disclosed upon acceptance.
 
 ---
@@ -119,7 +121,7 @@ for SEED in 2026 2027 2028; do
         --ckpt      outputs/target_only_seed${SEED}/best_model.pth \
         --data_dir  data/3dref_proper_split \
         --split     test \
-        --eval_seed 42 \
+        --seed 42 \
         --out       results_seed${SEED}_test.json
 done
 ```
@@ -146,6 +148,15 @@ All paper tables can be regenerated from the evidence package:
 python build_tables.py \
     --master results_master_formal.csv \
     --out    tables/
+
+# Output: 9 primary CSV files + 1 E6 full-metrics supplementary CSV + 1 audit log
+# 9 primary CSVs (as listed in the manual):
+#   table_e0_val.csv, table_e0_test.csv, table_e0_test_full.csv
+#   table_e2.csv, table_e3.csv, table_e3_full.csv
+#   table_e4_miou.csv, table_e4_full.csv, table_e6.csv
+# Supplementary (E6 complete metrics, not counted in the 9):
+#   table_e6_full_metrics.csv
+# Audit log: build_tables.log
 ```
 
 `results_master_formal.csv` contains 51 formal experiment rows with all AP/mIoU fields filled. Every number in the paper maps to a row in this file via `claim_ledger.md`.

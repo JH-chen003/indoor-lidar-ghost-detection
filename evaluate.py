@@ -131,6 +131,8 @@ def run_eval(ckpt_path, data_dirs, split="test", n_points=8192,
     }
     print(json.dumps({k: v for k, v in results.items()
                       if k not in ("environment", "reproducibility_note")}, indent=2))
+    print("[RULE] Each frozen checkpoint is evaluated on the test set exactly once.")
+    print("[RULE] Do not use test-set results to select or adjust the model.")
     return results
 
 

@@ -8,7 +8,7 @@
 **匿名 Repository（審稿期間使用）**：
 https://anonymous.4open.science/r/indoor-lidar-ghost-detection-F44B/
 
-包含：`ghost_detector.py`、`evaluate.py`、`requirements.txt`、`README.md`（含逐步重現指令）
+包含：`ghost_detector.py`、`evaluate.py`、`requirements.lock`、`README.md`（含逐步重現指令）
 
 ## 凍結模型：Focal-priority (Target-only, 原始方法設定, 正式模型)
 
@@ -24,8 +24,8 @@ https://anonymous.4open.science/r/indoor-lidar-ghost-detection-F44B/
 |---|---|---|---|---|
 | mIoU | 0.9615 | 0.9631 | 0.9624 | 0.9623±0.0008 |
 | Precision | 0.9633 | 0.9643 | 0.9638 | 0.9638±0.0005 |
-| Recall | 0.9974 | 0.9981 | 0.9978 | 0.9978±0.0004 |
-| F1 | 0.9800 | 0.9809 | 0.9805 | 0.9805±0.0005 |
+| Recall | 0.9974 | 0.9981 | 0.9978 | 0.9978±0.0003 |
+| F1 | 0.9800 | 0.9809 | 0.9805 | 0.9805±0.0004 |
 | IoU_ghost | 0.9609 | 0.9625 | 0.9618 | 0.9617±0.0008 |
 | AP | 0.9920 | 0.9937 | 0.9924 | 0.9927±0.0009 |
 

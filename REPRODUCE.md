@@ -133,7 +133,7 @@ python build_tables.py \
 # Output: tables/table_e0_val.csv, table_e0_test.csv,
 #         table_e2.csv, table_e3.csv, table_e3_full.csv,
 #         table_e4_miou.csv, table_e4_full.csv,
-#         table_e6.csv, table_e6_full.csv,
+#         table_e6.csv, table_e6_full_metrics.csv,
 #         build_tables.log
 ```
 

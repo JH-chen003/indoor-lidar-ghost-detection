@@ -8,7 +8,9 @@ What this script controls:
   - torch.manual_seed / numpy.random.seed / torch.cuda.manual_seed_all
   - torch.backends.cudnn.deterministic = True, benchmark = False
   - torch.use_deterministic_algorithms(True) where supported
-  - DataLoader worker_init_fn + generator to fix worker RNG state
+  - num_workers=0 for frozen test evaluation to eliminate multiprocess randomness
+  - seed_worker is defined for optional multi-worker use but is NOT attached
+    via worker_init_fn in this frozen-evaluation path (num_workers=0 makes it moot)
   - num_workers=0 for frozen test evaluation (eliminates multiprocess RNG)
 
 What this script does NOT guarantee:

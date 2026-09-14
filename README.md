@@ -29,7 +29,7 @@ Focal-priority model (original setting), frozen after training, evaluated **once
 | Recall | 0.9978 ± 0.0004 |
 | AP | 0.9927 ± 0.0009 |
 
-All SDs < 0.001 — high reproducibility within the fixed target-domain setting.
+For this fixed target-only checkpoint, fixed data, same environment, 3-seed frozen evaluation, all SDs are below 0.001 — this is not a general reproducibility claim across all experiments in this repository.
 
 ---
 

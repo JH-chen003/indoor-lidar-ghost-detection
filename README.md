@@ -24,12 +24,12 @@ Focal-priority model (original setting), frozen after training, evaluated **once
 | Metric | Mean ± SD |
 |--------|-----------|
 | mIoU | **0.962 ± 0.001** |
-| F1 | 0.9805 ± 0.0005 |
+| F1 | 0.9805 ± 0.0004 |
 | Precision | 0.9638 ± 0.0005 |
-| Recall | 0.9978 ± 0.0004 |
+| Recall | 0.9978 ± 0.0003 |
 | AP | 0.9927 ± 0.0009 |
 
-For this fixed target-only checkpoint, fixed data, same environment, 3-seed frozen evaluation, all SDs are below 0.001 — this is not a general reproducibility claim across all experiments in this repository.
+For this fixed target-only checkpoint, fixed data, same environment, 3-seed frozen evaluation, all metric SDs are below 0.001. This is not a general reproducibility claim across all experiments in this repository.
 
 ---
 
@@ -128,6 +128,8 @@ done
 
 **Important**: Each frozen checkpoint is evaluated **once** on the test set. Test results are never used to select or adjust the model.
 
+Reproducibility scope: the above evaluation command reproduces results for the fixed target-only checkpoint under the same data, seed, and software environment listed in `requirements.lock`. Results across different hardware, CUDA versions, or PyTorch releases are not guaranteed to be bit-exact.
+
 ---
 
 ## Frozen Checkpoint SHA256
@@ -150,7 +152,7 @@ python build_tables.py \
     --out    tables/
 
 # Output: 9 primary CSV files + 1 E6 full-metrics supplementary CSV + 1 audit log
-# 9 primary CSVs (as listed in the manual):
+# 9 primary CSVs:
 #   table_e0_val.csv, table_e0_test.csv, table_e0_test_full.csv
 #   table_e2.csv, table_e3.csv, table_e3_full.csv
 #   table_e4_miou.csv, table_e4_full.csv, table_e6.csv
@@ -159,7 +161,7 @@ python build_tables.py \
 # Audit log: build_tables.log
 ```
 
-`results_master_formal.csv` contains 51 formal experiment rows with all AP/mIoU fields filled. Every number in the paper maps to a row in this file via `claim_ledger.md`.
+`results_master_formal.csv` contains 51 formal experiment rows. AP fields are filled for all rows used in formal paper claims; 6 val-split rows (E0 source-only and direct-mixed val) have empty AP as a known, disclosed gap — these rows were used only for checkpoint selection and do not appear in paper AP claims.
 
 See `REPRODUCE.md` for full step-by-step instructions.
 
@@ -173,7 +175,7 @@ The submission includes the following auditable materials:
 |------|---------|
 | `frozen_manifest.md` | Checkpoint SHA256, frozen rules, per-seed target-test metrics |
 | `claim_ledger.md` | Paper claims → master table row mapping |
-| `results_master_formal.csv` | 51 formal experiment records, all AP/mIoU filled |
+| `results_master_formal.csv` | 51 formal experiment records |
 | `Dataset_Card.md` | Data specifications, split rules, binarization, limitations |
 | `model_selection_policy.md` | Selection rule, honest post-hoc timing disclosure |
 

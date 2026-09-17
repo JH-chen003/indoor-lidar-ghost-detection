@@ -1,6 +1,6 @@
 # Model Selection Policy
 
-**制定日期**: 2026-08-29（初版）／2026-09-01（v16複核，內容未變更）
+**制定日期**: 2026-08-29（初版）／2026-09-01（v16複核）／2026-09-17（v17：Focal-p AP更新）
 **作者**: Anonymous Author
 **狀態**: 事後制定（見下方誠實聲明）— 論文6.3節引用之補充材料S3
 
@@ -38,8 +38,10 @@ AP同時反映模型在各門檻下的Precision-Recall權衡，較單一F1更全
 | Weighted CE-priority (3 seeds平均) | 0.997 | 通過 | 0.9950 |
 | Focal-priority (原設定, 3 seeds平均) | 0.995 | 通過 | 0.9903 |
 | CE-random (3 seeds平均) | 0.979 | 通過 | 0.9907 |
-| Weighted CE-random (3 seeds平均) | 0.994 | 通過 | 0.9908 |
+| Weighted CE-random (3 seeds平均) | 0.994 | 通過 | 0.9907 |
 | Focal-random (3 seeds平均) | 0.992 | 通過 | 0.9868 |
+
+> Focal-priority AP = 0.9903（Mean of seed2026/2027/2028 val AP，來源：e0_target_only_seed* val 推論，`compute_missing_ap.py`，2026-09-17）
 
 **結果**：由於priority系列的Recall普遍已達0.97以上，本規則之Recall門檻未能有效篩選；
 AP排序下CE-priority系列（AP約0.997）仍為最高，與單看mIoU的結論一致。
@@ -53,7 +55,7 @@ AP排序下CE-priority系列（AP約0.997）仍為最高，與單看mIoU的結�
 
 **正式模型：Focal-priority**（原始方法設定）
 
-- 已完成frozen target-test評估：F1=0.9805±0.0005（見frozen_manifest.md）
+- 已完成frozen target-test評估：F1=0.9805±0.0004（見frozen_manifest.md）
 - 執行後不再回頭調整任何模型選擇決定
 - CE-priority之驗證集優勢列為下一輪確認性研究（confirmatory study）之優先假說，非本文正式模型
 

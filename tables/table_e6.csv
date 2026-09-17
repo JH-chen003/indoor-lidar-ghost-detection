@@ -1,0 +1,5 @@
+Method,mIoU_Mean,mIoU_SD,n_seeds
+uncalibrated,0.746,0.0933,3
+percentile,0.7969,0.0065,3
+z-score,0.7865,0.0207,3
+histogram,0.7964,0.0022,3

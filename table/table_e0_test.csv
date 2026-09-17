@@ -1,0 +1,4 @@
+Strategy,mIoU_Mean,mIoU_SD,note
+Target-only,0.9623,0.0008,frozen target-test seq09; each seed evaluated once
+Source-only,0.2584,0.0002,frozen target-test seq09; each seed evaluated once
+Direct-mixed,0.9097,0.0553,frozen target-test seq09; each seed evaluated once
